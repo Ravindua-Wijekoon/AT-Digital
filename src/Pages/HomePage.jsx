@@ -28,15 +28,15 @@ const HomePage = () => {
 
         {/* Image */}
         <div
-          className="md:h-[700px] sm:h-[448px] h-[218px] bg-cover bg-center flex items-end pl-16 pb-12"
+          className="lg:h-svh sm:h-[448px] h-[300px] bg-cover bg-center flex items-end pl-16 pb-12"
           style={{ backgroundImage: `url(${bgImage})` }}
         >
           {/* Content for large screens */}
-          <div className="p-10  bg-gradient-to-r from-gradientGreen to-gradientBlue hidden lg:block shadow-lg">
+          <div className="p-6  bg-gradient-to-r from-gradientGreen to-gradientBlue hidden lg:block shadow-lg">
             <h1 className="text-5xl font-bold mb-4">
               We Crush Your <br /> Competitors, Goals, And <br /> Sales Records - Without <br /> The B.S.
             </h1>
-            <Button text="Get free consultation" onClick={handleClickConsultation} className={"mt-3"} />
+            <Button text="Get free consultation" onClick={handleClickConsultation} className={"mt-2"} />
           </div>
 
         </div>
@@ -46,7 +46,7 @@ const HomePage = () => {
             <h1 className="text-5xl font-bold mb-4">
               We Crush Your Competitors, Goals, And Sales Records - Without The B.S.
             </h1>
-            <Button text="Get free consultation" onClick={handleClickLearnMore} className={"mt-3"} />
+            <Button text="Get free consultation" onClick={handleClickConsultation} className={"mt-3"} />
           </div>
       </section>
 

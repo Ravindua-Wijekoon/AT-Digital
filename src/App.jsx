@@ -9,9 +9,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="pt-16">
-        <HomePage />   
-      </div>
+      <HomePage />   
       <Footer />
     </Router>
   );
