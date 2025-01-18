@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImage from "../Assets/Image/Hero_Image.jpg";
 import Button from '../Components/Button';
 import Image1 from "../Assets/Image/image 1.png";
@@ -7,6 +7,11 @@ import CollapsibleCard from "../Components/CollapsibleCard";
 
 
 const HomePage = () => {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const handleToggle = (index) => {
+    setExpandedCard((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   const handleClickConsultation = () => {
     alert('Get free consultation Button Clicked!');
@@ -49,6 +54,7 @@ const HomePage = () => {
       {/* Services Section */}
       <section className="w-[95%] sm:w-[75%] mx-auto py-10">
         <div className="flex flex-col gap-10">
+          
           {/* Service 1 */}
           <div className="p-6 flex flex-col sm:flex-row gap-4  sm:items-start items-center text-center sm:text-left">
             <img src={Image2} alt="Web Development" />
@@ -90,14 +96,20 @@ const HomePage = () => {
           <CollapsibleCard
             title="Lorem ipsum dolor sit amet consectetur. Leo at sit eu libero?"
             content="Lorem ipsum dolor sit amet consectetur. Faucibus commodo suscipit id ipsum. Elementum ultrices nulla faucibus odio est sed aliquam. Sapien massa morbi risus sagittis tortor integer."
+            isOpen={expandedCard === 0}
+            onToggle={() => handleToggle(0)}
           />
           <CollapsibleCard
             title="Lorem ipsum dolor sit amet consectetur. Tortor scelerisque integer?"
             content="Lorem ipsum dolor sit amet consectetur. Faucibus commodo suscipit id ipsum. Elementum ultrices nulla faucibus odio est sed aliquam. Sapien massa morbi risus sagittis tortor integer."
+            isOpen={expandedCard === 1}
+            onToggle={() => handleToggle(1)}
           />
           <CollapsibleCard
             title="Lorem ipsum dolor sit amet consectetur. Faucibus scelerisque nunc?"
             content="Lorem ipsum dolor sit amet consectetur. Faucibus commodo suscipit id ipsum. Elementum ultrices nulla faucibus odio est sed aliquam. Sapien massa morbi risus sagittis tortor integer."
+            isOpen={expandedCard === 2}
+            onToggle={() => handleToggle(2)}  
           />
         </div>
       </section>
